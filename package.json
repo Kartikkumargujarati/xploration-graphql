@@ -10,6 +10,11 @@
     "start:dev": "nodemon",
     "start": "npm run build && node build/index.js"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettify && npm run lint"
+    }
+  },
   "repository": {
     "url": "https://github.com/Kartikkumargujarati/xploration-graphql"
   },
@@ -23,6 +28,7 @@
     "@typescript-eslint/parser": "^4.22.0",
     "eslint": "^7.24.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^6.0.0",
     "nodemon": "^2.0.7",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
