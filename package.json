@@ -4,7 +4,9 @@
   "description": "A federated GraphQL service that is a wrapper around the SpaceX REST API.",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon"
+    "build": "rimraf ./build && tsc",
+    "start:dev": "nodemon",
+    "start": "npm run build && node build/index.js"
   },
   "repository": {
     "url": "https://github.com/Kartikkumargujarati/xploration-graphql"
@@ -16,6 +18,7 @@
   "devDependencies": {
     "@types/node": "^14.14.41",
     "nodemon": "^2.0.7",
+    "rimraf": "^3.0.2",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.4"
   }
