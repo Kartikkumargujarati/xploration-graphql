@@ -1,0 +1,16 @@
+{
+  "name": "xploration-graphql",
+  "version": "1.0.0",
+  "description": "A federated GraphQL service that is a wrapper around the SpaceX REST API.",
+  "main": "index.js",
+  "scripts": {
+    
+  },
+  "repository": {
+    "url": "https://github.com/Kartikkumargujarati/xploration-graphql"
+  },
+  "keywords": [],
+  "author": "Kartik Kumar Gujarati",
+  "license": "MIT",
+  "homepage": "https://github.com/Kartikkumargujarati/xploration-graphql#readme"
+}
