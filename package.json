@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "A federated GraphQL service that is a wrapper around the SpaceX REST API.",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "dev": "nodemon"
+  },
   "repository": {
     "url": "https://github.com/Kartikkumargujarati/xploration-graphql"
   },
@@ -13,6 +15,8 @@
   "homepage": "https://github.com/Kartikkumargujarati/xploration-graphql#readme",
   "devDependencies": {
     "@types/node": "^14.14.41",
+    "nodemon": "^2.0.7",
+    "ts-node": "^9.1.1",
     "typescript": "^4.2.4"
   }
 }
