@@ -5,6 +5,23 @@ const typeDefs = gql`
   type Company {
     # Company Name
     name: String!
+    founder: String!
+    founded: Int!
+    ceo: String!
+    summary: String!
+    headquarters: Location
+    links: Links
+  }
+
+  type Location {
+    address: String!
+    city: String!
+    state: String!
+  }
+
+  type Links {
+    website: String!
+    twitter: String!
   }
 
   extend type Query {
