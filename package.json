@@ -2,15 +2,13 @@
   "name": "xploration-graphql",
   "version": "1.0.0",
   "description": "A federated GraphQL service that is a wrapper around the SpaceX REST API.",
-  "main": "index.js",
   "scripts": {
     "build": "rimraf ./build && tsc",
     "lint": "eslint . --ext .ts",
     "prettify": "prettier 'src/**/*.ts' --write",
     "start:dev": "concurrently -k npm:server:*",
-    "server:gateway": "nodemon --exec ts-node src/gateway.ts",
-    "server:company": "nodemon --exec ts-node src/company/index.ts",
-    "start": "npm run build && node build/gateway.js"
+    "server:gateway": "nodemon --exec ts-node src/gateway/index.ts",
+    "server:company": "nodemon --exec ts-node src/company-service/index.ts"
   },
   "husky": {
     "hooks": {
@@ -26,14 +24,16 @@
   "repository": {
     "url": "https://github.com/Kartikkumargujarati/xploration-graphql"
   },
-  "keywords": [],
+  "keywords": [
+    "graphql",
+    "federation",
+    "apollo-federation",
+    "spacex"
+  ],
   "author": "Kartik Kumar Gujarati",
   "license": "MIT",
   "homepage": "https://github.com/Kartikkumargujarati/xploration-graphql#readme",
   "dependencies": {
-    "@apollo/federation": "^0.23.0",
-    "@apollo/gateway": "^0.26.1",
-    "apollo-server": "^2.23.0",
     "concurrently": "^6.0.2"
   },
   "devDependencies": {
