@@ -6,7 +6,7 @@ A federated GraphQL service that is a wrapper around the <a href="https://github
 
 <div align="start">
 <br />
-<h3>Architecture Diagram:</h3>
+<h4>Architecture Diagram:</h4>
 <br />
 <img src="./xploration-graphql.png">
 </div>
