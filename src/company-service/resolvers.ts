@@ -1,5 +1,3 @@
-const company = { name: 'SpaceX' };
-
 const resolvers = {
   Query: {
     company: async (_source: any, _: any, { dataSources }: any) => {

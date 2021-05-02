@@ -2,7 +2,7 @@
   "name": "company-service",
   "version": "1.0.0",
   "description": "Company federated service",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "build": "rimraf ./build && tsc",
     "start:dev": "nodemon --exec ts-node index.ts"
