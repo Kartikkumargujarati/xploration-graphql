@@ -4,9 +4,17 @@
 </div>
 A mono-repo federated GraphQL service that is a wrapper around the <a href="https://github.com/r-spacex/SpaceX-API">SpaceX REST API</a>.
 
+## Architecture Diagram:
 <div align="start">
 <br />
-<h4>Architecture Diagram:</h4>
-<br />
 <img src="./xploration-graphql.png">
+<br />
 </div>
+
+## Features:
+- Apollo Federated GraphQL 
+- Typescript
+- Apollo Tracing
+- ESLint + Prettier
+- Husky (for lint enforcement)
+
