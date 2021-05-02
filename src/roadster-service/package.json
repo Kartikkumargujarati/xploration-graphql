@@ -1,7 +1,7 @@
 {
-  "name": "company-service",
+  "name": "roadster-service",
   "version": "1.0.0",
-  "description": "Company federated service",
+  "description": "Roadster federated service",
   "main": "index.ts",
   "scripts": {
     "build": "rimraf ./build && tsc",

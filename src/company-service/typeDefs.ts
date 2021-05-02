@@ -3,26 +3,26 @@ import { gql } from 'apollo-server';
 const typeDefs = gql`
   "This is the Company type that defines all the fields that describes a company"
   type Company {
-    "Company Name"
-    name: String!
-
-    "Company founder name"
-    founder: String!
+    "Company CEO name"
+    ceo: String!
 
     "Company founded year"
     founded: Int!
 
-    "Company CEO name"
-    ceo: String!
-
-    "Company summary"
-    summary: String!
+    "Company founder name"
+    founder: String!
 
     "Company headquarters location"
     headquarters: Location
 
     "Company website & social links"
     links: Links
+
+    "Company Name"
+    name: String!
+
+    "Company summary"
+    summary: String!
   }
 
   type Location {
