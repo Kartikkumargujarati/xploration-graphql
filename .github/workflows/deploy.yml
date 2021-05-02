@@ -18,7 +18,6 @@ jobs:
           heroku_email: ${{secrets.HEROKU_API_KEY}}
         env:
           HD_APP_BASE: "src/gateway"
-
       - name: Release Roadster Service 
       - uses: akhileshns/heroku-deploy@v3.12.12
         with:
@@ -27,7 +26,6 @@ jobs:
           heroku_email: ${{secrets.HEROKU_API_KEY}}
         env:
           HD_APP_BASE: "src/roadster-service"
-        
       - name: Release Company Service 
       - uses: akhileshns/heroku-deploy@v3.12.12
         with:
