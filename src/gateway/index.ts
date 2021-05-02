@@ -1,6 +1,8 @@
 import { ApolloServer } from 'apollo-server';
 import { ApolloGateway } from '@apollo/gateway';
 
+const PORT = process.env.PORT || 6969;
+
 const gateway = new ApolloGateway({
   serviceList: [
     { name: 'company', url: 'http://localhost:4001' },
@@ -10,6 +12,6 @@ const gateway = new ApolloGateway({
 
 const server = new ApolloServer({ gateway, subscriptions: false, tracing: true });
 
-server.listen(6969).then(({ url }) => {
+server.listen(PORT).then(({ url }) => {
   console.log(`🚀 Gateway ready at url: ${url}`);
 });

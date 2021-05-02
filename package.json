@@ -6,7 +6,7 @@
     "build": "rimraf ./build && tsc",
     "lint": "eslint . --ext .ts",
     "prettify": "prettier 'src/**/*.ts' --write",
-    "start:dev": "concurrently -k npm:server:*",
+    "start": "concurrently -k npm:server:*",
     "server:gateway": "nodemon --exec ts-node src/gateway/index.ts",
     "server:company": "nodemon --exec ts-node src/company-service/index.ts",
     "server:roadster": "nodemon --exec ts-node src/roadster-service/index.ts"
