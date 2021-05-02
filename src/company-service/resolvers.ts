@@ -5,4 +5,5 @@ const resolvers = {
     }
   }
 };
+
 export { resolvers };
