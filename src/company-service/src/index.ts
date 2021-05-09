@@ -17,7 +17,8 @@ const datasources = () => {
 const server = new ApolloServer({
   schema: schema,
   dataSources: datasources,
-  tracing: true
+  tracing: true,
+  introspection: true
 });
 
 server.listen({ port: PORT }).then(({ url }) => {
