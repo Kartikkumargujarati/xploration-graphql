@@ -4,6 +4,8 @@ import { typeDefs } from './typeDefs';
 import { resolvers } from './resolvers';
 import { CompanyDataSource } from './dataSource';
 
+const PORT = process.env.PORT || 4001;
+
 const schema = buildFederatedSchema([{ typeDefs, resolvers }]);
 
 const datasources = () => {
@@ -18,6 +20,6 @@ const server = new ApolloServer({
   tracing: true
 });
 
-server.listen({ port: 4001 }).then(({ url }) => {
+server.listen({ port: PORT }).then(({ url }) => {
   console.log(`🚀 Company service ready at ${url}`);
 });
