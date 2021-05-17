@@ -4,7 +4,7 @@ import { typeDefs } from './typeDefs';
 import { resolvers } from './resolvers';
 import { RoadsterDataSource } from './dataSource';
 
-const PORT = process.env.PORT || 4002;
+const PORT = process.env.PORT || 4003;
 
 const schema = buildFederatedSchema([{ typeDefs, resolvers }]);
 
