@@ -8,7 +8,8 @@ if (process.env.NODE_ENV !== 'production') {
   gatewayConfig = {
     serviceList: [
       { name: 'company', url: 'http://localhost:4001' },
-      { name: 'roadster', url: 'http://localhost:4002' }
+      { name: 'launch', url: 'http://localhost:4002' },
+      { name: 'roadster', url: 'http://localhost:4003' }
     ]
   };
 }
