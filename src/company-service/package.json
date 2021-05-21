@@ -5,7 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "build:dev": "rimraf ./build && tsc",
-    "start:dev": "nodemon --exec ts-node index.ts",
+    "start:dev": "nodemon --exec ts-node src/index.ts",
     "start": "node build/index.js",
     "postinstall": "tsc"
   },
