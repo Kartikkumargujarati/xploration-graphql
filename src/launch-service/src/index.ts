@@ -1,31 +1,26 @@
 import { buildFederatedSchema } from '@apollo/federation';
 import { ApolloServer, gql } from 'apollo-server';
+import { typeDefs } from './typeDefs';
+import { resolvers } from './resolvers';
+import { LaunchDataSource } from './dataSource';
 
-const typeDefs = gql`
-  # This is a Launch type that defines all the fields that describes a SpaceX Launch
-  type Launch {
-    # Launch id
-    id: String!
-  }
+const PORT = process.env.PORT || 4002;
 
-  extend type Query {
-    # Returns details about the latest launch
-    latestLaunch: Launch
-  }
-`;
+const schema = buildFederatedSchema([{ typeDefs, resolvers }]);
 
-const latestLaunch = { id: '1234' };
-
-const resolvers = {
-  Query: {
-    latestLaunch: () => latestLaunch
-  }
+const datasources = () => {
+  return {
+    launchAPI: new LaunchDataSource()
+  };
 };
 
 const server = new ApolloServer({
-  schema: buildFederatedSchema([{ typeDefs, resolvers }])
+  schema: schema,
+  dataSources: datasources,
+  tracing: true,
+  introspection: true
 });
 
-server.listen({ port: 4002 }).then(({ url }) => {
+server.listen({ port: PORT }).then(({ url }) => {
   console.log(`🚀 Launch service ready at ${url}`);
 });
