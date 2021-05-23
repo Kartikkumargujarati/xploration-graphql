@@ -9,18 +9,18 @@ const PORT = process.env.PORT || 4001;
 const schema = buildFederatedSchema([{ typeDefs, resolvers }]);
 
 const datasources = () => {
-  return {
-    companyAPI: new CompanyDataSource()
-  };
+    return {
+        companyAPI: new CompanyDataSource()
+    };
 };
 
 const server = new ApolloServer({
-  schema: schema,
-  dataSources: datasources,
-  tracing: true,
-  introspection: true
+    schema: schema,
+    dataSources: datasources,
+    tracing: true,
+    introspection: true
 });
 
 server.listen({ port: PORT }).then(({ url }) => {
-  console.log(`🚀 Company service ready at ${url}`);
+    console.log(`🚀 Company service ready at ${url}`);
 });

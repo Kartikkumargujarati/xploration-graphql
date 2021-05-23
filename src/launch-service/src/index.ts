@@ -9,18 +9,18 @@ const PORT = process.env.PORT || 4002;
 const schema = buildFederatedSchema([{ typeDefs, resolvers }]);
 
 const datasources = () => {
-  return {
-    launchAPI: new LaunchDataSource()
-  };
+    return {
+        launchAPI: new LaunchDataSource()
+    };
 };
 
 const server = new ApolloServer({
-  schema: schema,
-  dataSources: datasources,
-  tracing: true,
-  introspection: true
+    schema: schema,
+    dataSources: datasources,
+    tracing: true,
+    introspection: true
 });
 
 server.listen({ port: PORT }).then(({ url }) => {
-  console.log(`🚀 Launch service ready at ${url}`);
+    console.log(`🚀 Launch service ready at ${url}`);
 });

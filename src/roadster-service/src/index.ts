@@ -9,18 +9,18 @@ const PORT = process.env.PORT || 4003;
 const schema = buildFederatedSchema([{ typeDefs, resolvers }]);
 
 const datasources = () => {
-  return {
-    roadsterAPI: new RoadsterDataSource()
-  };
+    return {
+        roadsterAPI: new RoadsterDataSource()
+    };
 };
 
 const server = new ApolloServer({
-  schema: schema,
-  dataSources: datasources,
-  tracing: true,
-  introspection: true
+    schema: schema,
+    dataSources: datasources,
+    tracing: true,
+    introspection: true
 });
 
 server.listen({ port: PORT }).then(({ url }) => {
-  console.log(`🚀 Company service ready at ${url}`);
+    console.log(`🚀 Company service ready at ${url}`);
 });
