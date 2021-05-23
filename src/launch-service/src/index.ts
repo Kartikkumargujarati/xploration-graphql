@@ -1,16 +1,16 @@
 import { buildFederatedSchema } from '@apollo/federation';
-import { ApolloServer } from 'apollo-server';
+import { ApolloServer, gql } from 'apollo-server';
 import { typeDefs } from './typeDefs';
 import { resolvers } from './resolvers';
-import { CompanyDataSource } from './dataSource';
+import { LaunchDataSource } from './dataSource';
 
-const PORT = process.env.PORT || 4001;
+const PORT = process.env.PORT || 4002;
 
 const schema = buildFederatedSchema([{ typeDefs, resolvers }]);
 
 const datasources = () => {
     return {
-        companyAPI: new CompanyDataSource()
+        launchAPI: new LaunchDataSource()
     };
 };
 
@@ -22,5 +22,5 @@ const server = new ApolloServer({
 });
 
 server.listen({ port: PORT }).then(({ url }) => {
-    console.log(`🚀 Company service ready at ${url}`);
+    console.log(`🚀 Launch service ready at ${url}`);
 });

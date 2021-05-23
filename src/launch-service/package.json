@@ -1,7 +1,7 @@
 {
-  "name": "company-service",
+  "name": "launch-service",
   "version": "1.0.0",
-  "description": "Company federated service",
+  "description": "Launch federated service",
   "main": "index.ts",
   "scripts": {
     "build:dev": "rimraf ./build && tsc",

@@ -9,6 +9,7 @@
     "start:dev": "concurrently -k npm:server:*",
     "server:gateway": "nodemon --exec ts-node src/gateway/src/index.ts",
     "server:company": "nodemon --exec ts-node src/company-service/src/index.ts",
+    "server:launch": "nodemon --exec ts-node src/launch-service/src/index.ts",
     "server:roadster": "nodemon --exec ts-node src/roadster-service/src/index.ts"
   },
   "husky": {
