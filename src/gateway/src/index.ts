@@ -9,7 +9,8 @@ if (process.env.NODE_ENV !== 'production') {
         serviceList: [
             { name: 'company', url: 'http://localhost:4001' },
             { name: 'launch', url: 'http://localhost:4002' },
-            { name: 'roadster', url: 'http://localhost:4003' }
+            { name: 'roadster', url: 'http://localhost:4003' },
+            { name: 'rocket', url: 'http://localhost:4004' }
         ]
     };
 }
