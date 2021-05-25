@@ -2,7 +2,7 @@ import { gql } from 'apollo-server';
 
 const typeDefs = gql`
     # This is a Rocket type
-    type Rocket {
+    type Rocket @key(fields: "id") {
         # Rocket id
         id: String!
 

@@ -7,6 +7,9 @@ export function getLaunch(launch: LaunchDto) {
         name: launch.name,
         flightNumber: launch.flight_number,
         details: launch.details,
+        rocket: {
+            id: launch.rocket
+        },
         links: {
             images: launch.links.flickr.original,
             patch: launch.links.patch.large,

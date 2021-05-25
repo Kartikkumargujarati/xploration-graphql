@@ -12,6 +12,11 @@ const resolvers = {
             const pastLaunches = await dataSources.launchAPI.getPastLaunches();
             return getPastLaunches(pastLaunches);
         }
+    },
+    Launch: {
+        rocket(launch: any) {
+            return { __typename: 'Rocket', id: launch.rocket.id };
+        }
     }
 };
 

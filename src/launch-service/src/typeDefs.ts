@@ -20,6 +20,9 @@ const typeDefs = gql`
 
         # Launch Links
         links: LaunchLinks
+
+        # Rocket details
+        rocket: Rocket
     }
 
     type LaunchLinks {
@@ -28,6 +31,10 @@ const typeDefs = gql`
         reddit: String
         wikipedia: String
         youTube: String
+    }
+
+    extend type Rocket @key(fields: "id") {
+        id: String! @external
     }
 
     extend type Query {
