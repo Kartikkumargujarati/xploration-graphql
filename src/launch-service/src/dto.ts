@@ -4,6 +4,7 @@ export interface LaunchDto {
     name: string;
     flight_number: bigint;
     details: string;
+    rocket: string;
     links: {
         flickr: {
             original: [string];
