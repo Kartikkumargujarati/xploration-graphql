@@ -1,29 +1,29 @@
 import { gql } from 'apollo-server';
 
 const typeDefs = gql`
-    # This is a Rocket type
+    "This is a Rocket type"
     type Rocket @key(fields: "id") {
-        # Rocket id
+        "Rocket id"
         id: String!
 
-        # Rocket company name
+        "Rocket company name"
         company: String
 
-        # Rocket country name
+        "Rocket country name"
         country: String
 
-        # Rocket name
+        "Rocket name"
         name: String
 
-        # Rocket Description
+        "Rocket description"
         description: String
 
-        # Rocket images
+        "Rocket images"
         images: [String]
     }
 
     extend type Query {
-        # Returns details about a Rocket used in a launch
+        "Returns details about a rocket used in a launch"
         rocket(rocketId: String!): Rocket
     }
 `;
