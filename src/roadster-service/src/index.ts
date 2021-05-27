@@ -18,7 +18,7 @@ const server = new ApolloServer({
     schema: schema,
     dataSources: datasources,
     tracing: true,
-    introspection: true
+    introspection: process.env.NODE_ENV !== 'production'
 });
 
 server.listen({ port: PORT }).then(({ url }) => {
