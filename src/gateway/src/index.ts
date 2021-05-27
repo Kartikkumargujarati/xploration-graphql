@@ -22,6 +22,7 @@ const server = new ApolloServer({
     subscriptions: false,
     tracing: true,
     introspection: true,
+    playground: true,
     engine: {
         apiKey: process.env.APOLLO_KEY
     }
