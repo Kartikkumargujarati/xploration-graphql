@@ -1,27 +1,27 @@
 import { gql } from 'apollo-server';
 
 const typeDefs = gql`
-    # This is a Launch type that defines all the fields that describes a SpaceX Launch
+    "This is a Launch type that defines all the fields that describes a SpaceX Launch"
     type Launch {
-        # Launch id
+        "Launch id"
         id: String!
 
-        # Launch date (UTC)
+        "Launch date (UTC)"
         date: String
 
-        # Launch name
+        "Launch name"
         name: String
 
-        # Flight number
+        "Flight number"
         flightNumber: Int
 
-        # Launch Details
+        "Launch details"
         details: String
 
-        # Launch Links
+        "Launch links"
         links: LaunchLinks
 
-        # Rocket details
+        "Rocket details"
         rocket: Rocket
     }
 
@@ -38,10 +38,10 @@ const typeDefs = gql`
     }
 
     extend type Query {
-        # Returns details about the next launch
+        "Returns details about the next launch"
         nextLaunch: Launch
 
-        # Returns a list of past launches
+        "Returns a list of past launches"
         pastLaunches: [Launch]
     }
 `;
