@@ -5,13 +5,13 @@
   "scripts": {
     "build": "rimraf ./build && tsc",
     "lint": "eslint . --ext .ts",
-    "prettify": "prettier 'src/**/*.ts' --write",
+    "prettify": "prettier '**/*.ts' --write",
     "start:dev": "concurrently -k npm:server:*",
-    "server:gateway": "nodemon --exec ts-node src/gateway/src/index.ts",
-    "server:company": "nodemon --exec ts-node src/company-service/src/index.ts",
-    "server:launch": "nodemon --exec ts-node src/launch-service/src/index.ts",
-    "server:roadster": "nodemon --exec ts-node src/roadster-service/src/index.ts",
-    "server:rocket": "nodemon --exec ts-node src/rocket-service/src/index.ts"
+    "server:gateway": "nodemon --exec ts-node gateway/src/index.ts",
+    "server:company": "nodemon --exec ts-node company-service/src/index.ts",
+    "server:launch": "nodemon --exec ts-node launch-service/src/index.ts",
+    "server:roadster": "nodemon --exec ts-node roadster-service/src/index.ts",
+    "server:rocket": "nodemon --exec ts-node rocket-service/src/index.ts"
   },
   "husky": {
     "hooks": {
