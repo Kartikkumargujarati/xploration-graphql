@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "roadster-service/*"
 
 jobs:
   build:
@@ -17,4 +19,4 @@ jobs:
           heroku_app_name: "xploration-roadster-svc"
           heroku_email: ${{secrets.HEROKU_API_KEY}}
         env:
-          HD_APP_BASE: "src/roadster-service"
+          HD_APP_BASE: "roadster-service"
