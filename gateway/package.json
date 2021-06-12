@@ -1,0 +1,22 @@
+{
+  "name": "gateway",
+  "version": "1.0.0",
+  "description": "Gateway service for the federated GraphQL service that is a wrapper around the SpaceX REST API.",
+  "main": "index.ts",
+  "scripts": {
+    "build:dev": "rimraf ./build && tsc",
+    "start:dev": "nodemon --exec ts-node index.ts",
+    "start": "node build/index.js",
+    "postinstall": "tsc"
+  },
+  "dependencies": {
+    "@apollo/gateway": "^0.26.1",
+    "apollo-server": "^2.23.0",
+    "rimraf": "^3.0.2",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  },
+  "engines": {
+    "node": "15.x"
+  }
+}
