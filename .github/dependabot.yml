@@ -3,6 +3,7 @@ updates:
 - package-ecosystem: npm
   directory: "/"
   schedule:
-    interval: daily
+    interval: weekly
     time: "22:00"
+  target_branch: "develop"
   open-pull-requests-limit: 10
