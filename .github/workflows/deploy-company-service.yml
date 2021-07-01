@@ -10,8 +10,14 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [15.x]
+
     steps:
       - uses: actions/checkout@v2
+
       - name: Release Company Service
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
@@ -20,3 +26,19 @@ jobs:
           heroku_email: ${{secrets.HEROKU_API_KEY}}
         env:
           HD_APP_BASE: "company-service"
+
+      - name: Generate Local Schema for Company Service
+        uses: actions/setup-node@v2
+        working-directory: ./company-service
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm run generateSchema
+
+      - name: Push Company Schema to Apollo Registry
+        working-directory: ./company-service
+        env:
+          APOLLO_KEY: ${{ secrets.APOLLO_KEY }}
+        run: |
+          npx -p @apollo/rover rover subgraph publish xploration-graphql-ygvmgl \
+            --name=xploration-company-svc \
+            --schema=./schema.graphql \
