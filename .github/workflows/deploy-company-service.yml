@@ -33,3 +33,12 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm run generateSchema
+
+      - name: Push Company Schema to Apollo Registry
+        working-directory: ./company-service
+        env:
+          APOLLO_KEY: ${{ secrets.APOLLO_KEY }}
+        run: |
+          npx -p @apollo/rover rover subgraph publish xploration-graphql-ygvmgl \
+            --name=xploration-company-svc \
+            --schema=./schema.graphql \
