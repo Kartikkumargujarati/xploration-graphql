@@ -36,7 +36,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm run generateSchema
+        run: |
+          npm ci && npm run generateSchema
 
       - name: Push Company Schema to Apollo Registry
         env:
