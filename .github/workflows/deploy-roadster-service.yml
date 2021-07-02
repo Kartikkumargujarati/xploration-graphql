@@ -1,6 +1,7 @@
 name: Deploy Roadster Service to Heroku
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -10,8 +11,18 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [15.x]
+
+    defaults:
+      run:
+        working-directory: ./roadster-service
+
     steps:
       - uses: actions/checkout@v2
+
       - name: Release Roadster Service
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
@@ -20,3 +31,20 @@ jobs:
           heroku_email: ${{secrets.HEROKU_API_KEY}}
         env:
           HD_APP_BASE: "roadster-service"
+      
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Generate Local Schema for Roadster Service
+        run: |
+          npm ci && npm run generateSchema
+      
+      - name: Push Roadster Service schema to Apollo Registry
+        env:
+          APOLLO_KEY: ${{ secrets.APOLLO_KEY }}
+        run: |
+          npx -p @apollo/rover rover subgraph publish xploration-graphql-ygvmgl \
+            --name=xploration-roadster-svc \
+            --schema=./schema.graphql \
