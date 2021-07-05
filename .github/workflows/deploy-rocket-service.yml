@@ -1,4 +1,4 @@
-name: Deploy Rocket Service to Heroku
+name: Deploy Rocket Service
 
 on:
   workflow_dispatch:
@@ -23,7 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Release rocket Service
+      - name: Deploy Rocket Service to Heroku
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
