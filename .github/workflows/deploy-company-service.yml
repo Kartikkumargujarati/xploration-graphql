@@ -9,7 +9,8 @@ on:
       - "company-service/*"
 
 jobs:
-  build:
+  deploy:
+    name: Deploy to Heroku
     runs-on: ubuntu-latest
 
     strategy:
@@ -31,6 +32,21 @@ jobs:
           heroku_email: ${{secrets.HEROKU_API_KEY}}
         env:
           HD_APP_BASE: "company-service"
+            
+  schema_push:
+    name: Generate & Schema Push
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [15.x]
+
+    defaults:
+      run:
+        working-directory: ./company-service
+
+    steps:
+      - uses: actions/checkout@v2
 
       - name: Setup Node
         uses: actions/setup-node@v2
