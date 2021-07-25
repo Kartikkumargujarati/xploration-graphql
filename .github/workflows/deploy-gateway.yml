@@ -8,10 +8,12 @@ on:
       - "gateway/*"
 
 jobs:
-  build:
+  deploy:
+    name: Deploy to Heroku
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      
       - name: Release Gateway to Heroku
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
